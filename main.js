@@ -1,5 +1,21 @@
+// Constants
 const OPTIONS = ["white", "black", "rgb", "special"];
 
+// DOM Elements
+const container = document.querySelector(".container");
+const gridSlider = document.querySelector(".grid-size");
+const gridTitle = document.querySelector(".grid-title");
+const gridMode = document.querySelector(".grid-mode");
+
+// Variables
+let gridSize = 16;
+let coloringFunction = getBlackMode;
+let darkeningEffect = 0;
+
+// Initialize
+createGrid(gridSize, container);
+
+// Functions
 function createGrid(n, container) {
 
     for (let i = 0; i < n * n; i++) {
@@ -59,14 +75,9 @@ function changeBehavior(option) {
 }
 
 function disposeGrid(container) {
-    // container.innerHTML = "";
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
-}
-
-function clip(value) {
-    return Math.min(100, Math.max(2, value));
 }
 
 function createBrandNewGrid(container, gridSize) {
@@ -74,24 +85,10 @@ function createBrandNewGrid(container, gridSize) {
     createGrid(gridSize, container);
 }
 
-const container = document.querySelector(".container");
-const gridSlider = document.querySelector(".grid-size");
-const gridTitle = document.querySelector(".grid-title");
-const gridMode = document.querySelector(".grid-mode");
-
-let gridSize = 16;
-
-let coloringFunction = getBlackMode;
-let darkeningEffect = 0;
-
-createGrid(gridSize, container);
-
 
 
 // Event Listeners
-
-container.addEventListener('mouseover', paint)
-
+container.addEventListener('mouseover', paint);
 
 gridSlider.addEventListener('change', (event) => {
     gridSize = parseInt(event.target.value);
