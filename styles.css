@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(255, 0, 0, 0.627);
 }
 
 *,
@@ -9,15 +10,111 @@ html {
     box-sizing: inherit;
 }
 
+.body {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+
+
+.header-logo-text {
+    margin-right: auto;
+    justify-self: center;
+    font-size: 42px;
+    font-weight: 800;
+    
+}
+
+.nav-header {
+    font-size: 20px;
+}
+
+div {
+    /* border : 1px solid black; */
+}
+
+.middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.grid-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.grid-size {
+    accent-color: rgba(255, 0, 0, 0.627);
+}
+
 .container {
-    border: 4px solid blue;
-    width: 500px;
-    height: 500px;
+    border: 24px solid rgba(255, 0, 0, 0.627);
+    border-radius: 22px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
+    /* margin: auto; */
+}
+
+.grid-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .item {
-    border: 1px solid red;
-    /* flex-basis: 6.25%; */
+    border: 1px solid rgba(128, 128, 128, 0.379);
 }
+
+button {
+    background-color: rgba(255, 255, 0, 0.471);
+    color: rgba(255, 0, 0, 0.627);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 0.452);
+    color: yellow
+  }
