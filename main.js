@@ -102,7 +102,7 @@ gridSlider.addEventListener('change', (event) => {
     createBrandNewGrid(container, gridSize);
 });
 
-gridMode.addEventListener('click', (event) => {
+gridMode.addEventListener('mousedown', (event) => {
     darkeningEffect = 0;
 
     const option = event.target.getAttribute("eas-option");
