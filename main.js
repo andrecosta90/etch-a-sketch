@@ -43,6 +43,9 @@ function getRGBMode() {
 }
 
 function getSpecialMode() {
+    if (darkeningEffect > 1) {
+        darkeningEffect = 0;
+    }
     darkeningEffect += 0.01;
     return `rgba(0, 0, 0, ${darkeningEffect})`;
 }
@@ -85,10 +88,30 @@ function createBrandNewGrid(container, gridSize) {
     createGrid(gridSize, container);
 }
 
-
+let isMouseDown = false;
 
 // Event Listeners
-container.addEventListener('mouseover', paint);
+container.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+    isMouseDown = true;
+    paint(event);
+});
+
+container.addEventListener('mouseup', (event) => {
+    isMouseDown = false;
+});
+
+container.addEventListener('mouseleave', (event) => {
+    isMouseDown = false;
+});
+
+container.addEventListener('mouseover', (event) => {
+    
+    if (isMouseDown === true) {
+        paint(event);
+    }
+});
+
 
 gridSlider.addEventListener('change', (event) => {
     gridSize = parseInt(event.target.value);

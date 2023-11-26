@@ -83,7 +83,7 @@ div {
 }
 
 .container {
-    border: 24px solid rgba(255, 0, 0, 0.627);
+    border: 64px solid rgba(255, 0, 0, 0.627);
     border-radius: 22px;
     width: 600px;
     height: 600px;
